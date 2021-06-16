@@ -22,7 +22,7 @@ Installation
 * npm install react
 * npm install react react-dom
 * npm install react-redux
-* Follow My_Bucket backend instructions before moving forward
+* Follow My_Bucket_project backend instructions before moving forward
 * Once backend is installed run npm start
 
 App Created by Rachelle Spicer
