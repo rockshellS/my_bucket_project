@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { createUser } from '../actions/index'
+import { loginSuccess, displayAdventures } from '../actions/index'
+
 import { Button, Form, Grid, Header, Segment } from 'semantic-ui-react'
 
 
@@ -24,21 +25,39 @@ handleChange = (event) => {
 }
 
 handleSubmit = (event) => {
-   
+   const user = {
+     user: this.state
+   }
     event.preventDefault()
     const reqObj = {
         method: "POST",
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(this.state)
+        body: JSON.stringify(user)
     }
     console.log(reqObj)
     fetch('http://localhost:3000/users', reqObj)
     .then(resp => resp.json())
     .then(respData =>{
-        console.log(respData)
-        this.props.createUser(respData)
+      if (respData.error) {
+        this.setState({
+            error: respData.error
+        })
+    }else {
+     this.props.loginSuccess(respData.user)
+     localStorage.setItem('token', respData.token)
+     this.props.history.push('/home')
+    fetch('http://localhost:3000/adventures')
+    .then(resp => resp.json())
+    .then(adventures => {
+    
+      this.props.displayAdventures(adventures)
+      this.props.history.push('/home')
+   })
+
+    }
+      
     })
 
 }
@@ -91,7 +110,8 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps ={
-    createUser: createUser
+    loginSuccess,
+    displayAdventures
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Signup)

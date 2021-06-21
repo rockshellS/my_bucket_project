@@ -32,7 +32,7 @@ handleSubmit = (event) => {
             name: '',
             password: ''
          })
-        fetch('http://localhost:3000/users', reqObj)
+        fetch('http://localhost:3000/user_auth', reqObj)
         .then(resp => resp.json())
         .then(respData => {
             if (respData.error) {
@@ -46,7 +46,7 @@ handleSubmit = (event) => {
             fetch('http://localhost:3000/adventures')
             .then(resp => resp.json())
             .then(adventures => {
-            // console.log(adventures)
+            
               this.props.displayAdventures(adventures)
               this.props.history.push('/home')
            })

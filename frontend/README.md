@@ -1,7 +1,7 @@
 Features
 
-* Users can see carasol of adventures before loging in
-* Login in either Rachelle, Alison, Heather, Brandon, or Evans with password abc
+* Users can see carousel of adventures before loging in
+* User can create an account
 * User has a secure password and login
 * User can browse adventures
 * User can view more details about adventure
