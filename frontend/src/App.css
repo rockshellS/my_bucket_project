@@ -101,7 +101,7 @@ div.gallery2 img {
   font-size: 15px;
   color: #f8faf8;
   letter-spacing: 2px;
-  
+  margin-left: 10px;
   text-align: center;
 }
 .p2 {
@@ -162,6 +162,7 @@ div.About{
   height: 1000px;
   width: auto;
   background-color: #333;
+  margin: 60px;
   
 }
 .h4 {
