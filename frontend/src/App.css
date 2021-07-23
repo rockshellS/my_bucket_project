@@ -78,9 +78,16 @@ div.gallery2 {
 }
 div.gallery2 img {
   /* border-radius: 8px; */
+  text-align: center;
+  padding: 10px;
   width: 100%;
+  padding: .5px;
   /* height: auto; */
   height: 145px;
+  margin-left: auto;
+  margin-right: auto;
+  /* margin: 40px; */
+  margin-bottom: -20px;
 }
 .button2 {
   border-radius: 8px;
@@ -160,10 +167,12 @@ div.About{
   color: #9c5c12;
   font-family: 'New Tegomin', serif;
   height: 1000px;
-  width: auto;
+  width: 800px;
   background-color: #333;
-  margin: 60px;
-  
+  margin: 40px;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .h4 {
   letter-spacing: 3px;
